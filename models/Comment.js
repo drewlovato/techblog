@@ -1,8 +1,11 @@
+// Attach Models and Datatypes through sequelize
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
+// Comment attaches to models
 class Comment extends Model {}
 
+// Create comment database
 Comment.init({
     id: {
         type: DataTypes.INTEGER,
@@ -37,3 +40,5 @@ Comment.init({
         modelName: 'post',
     }
 );
+
+module.exports = Comment;

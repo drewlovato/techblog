@@ -1,12 +1,15 @@
+// Attach Models and Datatypes through sequelize
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
+// User attaches to models
 class User extends Model {
     checkPassword(loginPass) {
         return bcrypt.compareSync(loginPass, this.password);
     }
 }
 
+// Create user database
 User.init({
         id: {
             type: DataTypes.INTEGER,
@@ -14,7 +17,7 @@ User.init({
             primaryKey: true,
             autoIncrement: true,
         },
-        username: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
