@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Andrew Lovato",
+        "email": "andrew@gmail.com",
+        "password": "1234"
+    },
+    {
+        "name": "Drew Lederman",
+        "email": "Drew@gmail.com",
+        "password": "5678"
+    },
+    {
+        "name": "Dan Kelly",
+        "email": "dan@gmail.com",
+        "password": "7896"
+    }
+]
