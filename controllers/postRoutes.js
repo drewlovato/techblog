@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const {User, Post, Comment } = require('../../models');
-const isAuthorized = require('../../utils/auth');
+const {User, Post, Comment } = require('../models');
+// const isAuthorized = require('../utils/auth');
 
-router.get('/', async (req, res) =>{
+router.get('/', async (req, res) => {
     try {
         const postData = await Post.findAll({
             attributes: ['id', 'name', 'details', 'creation_data'],
@@ -13,7 +13,7 @@ router.get('/', async (req, res) =>{
             },
             {
                 model: Comment,
-                attributes: ['id', 'comment_details', 'post_id', 'user_id', 'craetion_data'],
+                attributes: ['id', 'comment_details', 'post_id', 'user_id', 'creation_data'],
                 include: {
                     model: User,
                     attributes: ['name'],
@@ -37,7 +37,7 @@ router.get('/:id', async (req,res) => {
         },
         {
             model: Comment,
-            attributes: ['id', 'comment_details', 'post_id', 'user_id', 'craetion_data'],
+            attributes: ['id', 'comment_details', 'post_id', 'user_id', 'creation_data'],
             include: {
                 model: User,
                 attributes: ['name'],
@@ -50,3 +50,5 @@ router.get('/:id', async (req,res) => {
     res.status(400).json(err);
     }
 });
+
+module.exports = router;
