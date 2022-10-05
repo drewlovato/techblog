@@ -1,7 +1,14 @@
 [
     {
-        "title": "Andrew",
-        "details": "Anything",
-        "user_id": 1
+        "title": "This is a post",
+        "content": "This is the content"
+    },
+    {
+        "title": "This is the second post",
+        "content": "This is the second content"
+    },
+    {
+        "title": "This is the third post",
+        "content": "This is the third content"
     }
 ]

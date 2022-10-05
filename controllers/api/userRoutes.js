@@ -1,78 +1,34 @@
 const router = require('express').Router();
-const { User, Post, Comment } = require('../../models');
+const { User } = require('../../models');
+const isAuthorized = require("../../utils/auth");
 
-
-router.get('/', async (req, res) => {
+// Create a User
+router.post('/', async (req, res) => {
     try {
-        const userData = await User.findAll({
-            attributes: {
-                exclude: ['password']
-            }
+        const userData = await User.create(req.body);
+        req.session.save(() => {
+            req.session.user_id = userData.id;
+            req.session.logged_in = true;
+
+            res.status(200).json(userData)
         });
-        res.status(200).json(userData);
-    } catch(err){
+    } catch(err) {
         res.status(400).json(err)
     }
 });
 
-router.get('/:id', async (req, res) => {
-    try{
-        const userData = await User.findOne({
-            where: {
-                id: req.params.id
-            },
-            attributes: {
-                exclude: ['password']
-            },
-            include: [{
-                model: Post,
-                attributes: ['id', 'name', 'details']
-            },
-            {
-                model: Comment,
-                attributes: ['id', 'comment_details'],
-                include: {
-                    model: Post,
-                    attributes: ['name']
-                }
-            }
-        ]
-        });
-        res.status(200).json(userData);
-    } catch (errr) {
-        res.status(400).json(err);
-    }
-});
-
-router.post('/', async (req, res) => {
-    try {
-        const userData = await User.create(req.body);
-
-        //add session when authorized
-        req.session.save(() =>{
-            req.session.user_id = userData.id;
-            req.session.logged_in = true;
-
-            res.status(200).json(userData);
-        });
-    } catch (err) {
-        res.status(400).json(err);
-    }
-});
-
+// Login a User
 router.post('/login', async (req, res) => {
     try {
         const userData = await User.findOne({ where: {email: req.body.email }});
 
         if (!userData) {
             res.status(400).json({ message: 'Incorrect email of password, please try again'});
-
             return;
         }
 
-        if (!validPassword) {
+        if (!correctPassword) {
             res.status(400).json({ message: 'Incorrect email or password, please try again'});
-
             return;
         }
 
@@ -80,14 +36,47 @@ router.post('/login', async (req, res) => {
             req.session.user.id = userData.id;
             req.session.logged_in = true;
 
-            res.json({ user: userData, message: "You are now logged in!"});
+            res.json({ user: userData, message: "Login Succesfull"});
         });
     } catch {
         res.status(400).json(err);
     }
 });
 
-router.post('/login', (req, res) => {
+// UPDATE a Users Password
+router.put("/password/", isAuthorized, async(req,res) => {
+    try {
+        const userDataDB = await User.findByPk(req.session.user_id);
+        const correctPassword = userDataDB.checkPassword(
+            req.body.presentPassword
+        );
+        if(correctPassword) {
+            const userData = await User.update(
+                {
+                    password: req.body.newPassword,
+                },
+                {
+                    where: {
+                        id: req.session. user_id,
+                    },
+                    individualHooks: true,
+                }
+            );
+            if (userData) {
+                res.status(200).json(userData);
+            } else {
+                res.status(404).json({ message: "No user found" })
+            }
+            } else {
+                res.status(400).json({ message: "Incorrect password" });
+            }
+            } catch (err) {
+                res.status(500).json(err)
+            }
+        });
+
+// Logout a User
+router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
         req.session.destroy(() => {
             res.status(204).end();

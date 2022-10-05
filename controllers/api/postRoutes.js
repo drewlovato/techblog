@@ -1,91 +1,71 @@
 const router = require('express').Router();
-const {User, Post, Comment } = require('../../models');
+const {User, Post } = require('../../models');
 const isAuthorized = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
-    try {
-        const postData = await Post.findAll({
-            attributes: ['id', 'name', 'details', 'creation_data'],
-            order: [['creation_data', 'DESC']],
-            include: [{
-                model: User,
-                attributes: ['name'],
-            },
-            {
-                model: Comment,
-                attributes: ['id', 'comment_details', 'post_id', 'user_id', 'creation_data'],
-                include: {
-                    model: User,
-                    attributes: ['name'],
-                },
-            },
-        ],
-        });
-        res.status(200).json(postData);
-    } catch (err) {
-        res.status(400).json(err);
-    }
-});
-
-router.get('/:id', async (req,res) => {
+// GET post by ID
+router.get('/:id', isAuthorized, async (req,res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
-            attributes: ['id', 'name', 'details', 'creation_data'],
-        include : [{ 
+        include : [
+            { 
             model: User, 
-            attributes: ['names'],
-        },
-        {
-            model: Comment,
-            attributes: ['id', 'comment_details', 'post_id', 'user_id', 'creation_data'],
-            include: {
-                model: User,
-                attributes: ['name'],
             },
-        },
-    ],
+        ],
     });
-    res.status(200).json(postData);
+    const post = data.get({ plain: true });
+    res.render("post", {
+        post,
+        loggedIn: req.session.loggedIn,
+    });
     } catch (err) {
-    res.status(400).json(err);
+        console.log(err);
+        res.status(500).json(err);
     }
 });
 
+// CREATE a new post
 router.post('/', isAuthorized, async (req, res) => {
     try {
-        const newPost = await Post.create({
-        name: req.body.name,
-        details: req/body.details,
-        user_id: req.session.user_id
+        const data = await Post.create({
+        title: req.body.name,
+        content: req.body.content,
+        user_id: req.session.user_id,
         });
-        res.status(200).json(newPost);
+        res.status(200).json(data);
     } catch (err){
         res.status(400).json(err);
     }
 });
 
+// UPDATE existing post
 router.put('/:id', isAuthorized, async (req, res) => {
     try{
-        const updatePost = await Post.update({
-            name: req.body.name,
-            details: req.body.details,
-        },
-        {
-            where: {
-                id:req.params.id,
+        const updatePost = await Post.update(
+            {
+                id: req.params.id,
+                title: req.body.title,
+                content: req.body.content,
             },
-        });
+            {
+                where: {
+                    id:req.params.id,
+                    user_id: req.body.user_id,
+                },
+            }
+        );
         res.status(200).json(updatePost);
     } catch (err) {
         res.status(400).json(err);
     }
 });
 
+// DELETE existing post
 router.delete('/:id', isAuthorized, async (req, res) => {
     try {
         const postData = await Post.destroy({
             where: {
                 id: req.params.id,
+                user_id: req.session.user_id,
             },
         });
         res.status(200).json(postData);
