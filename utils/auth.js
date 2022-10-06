@@ -1,9 +1,9 @@
 const isAuthorized = (req, res, next) => {
-    if(!req.session.loggedIn){
-        res.redirect('/login');
-    } else {
-        next();
-    }
+  if (!req.session.logged_in) {
+    next();
+  } else {
+    res.redirect("/login");
+  }
 };
 
 module.exports = isAuthorized;

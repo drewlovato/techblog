@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const res = require('express/lib/response');
 const { Post, User, Comment } = require('../models');
 const isAuthorized = require("../utils/auth");
 
@@ -219,12 +220,35 @@ router.get("/changePassword/", isAuthorized, async (req, res) => {
     }
 });
 
-router.get('/login', (req, res) => {
+// GET Login page
+router.get('/login', async (req, res) => {
+    try {
     if(req.session.loggedIn) {
         res.redirect('/');
         return;
+        } else {
+            res.render("login", {
+                logged_in: req.session.logged_in,
+            });
         }
-        res.render('signup')
-})
+        } catch (err) {
+            res.status(500).json(err);
+        }
+});
+
+// GET Create Account page
+router.get("/createAccount", async (req, res) => {
+    try {
+        if(req.session.logged_in) {
+            res.redirect("/");
+        } else {
+            res.render("createAccount", {
+                logged_on: req.session.logged_in,
+            });
+        }
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router;

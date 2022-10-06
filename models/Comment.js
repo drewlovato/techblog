@@ -6,39 +6,40 @@ const sequelize = require("../config/connection");
 class Comment extends Model {}
 
 // Create comment database
-Comment.init({
+Comment.init(
+  {
     id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-    comment_details: {
-        type: DataTypes.STRING,
-    },
-    user_id: {
-        type: DataTypes.INTEGER,
-        references:{
-            model: 'user',
-            key: 'id',
-        },
+    content: {
+      type: DataTypes.STRING,
     },
     post_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "post",
+        key: "id",
+      },
+      user_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        references:{
-            model: 'post',
-            key: 'id',
+        references: {
+          model: "user",
+          key: "id",
         },
+      },
     },
-},
-    {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'post',
-    }
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "comment",
+  }
 );
 
 module.exports = Comment;
