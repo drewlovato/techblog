@@ -1,0 +1,41 @@
+<body>
+    <section class="post-card">
+
+        <div class="post-header">
+            {{post.title}}
+        </div>
+
+        <div class="post-body">
+            <div class="post-body-data">
+                {{post.user.name}}
+            </div>
+        </div>
+
+        <div class="post-content">
+            {{post.content}}
+        </div>
+
+        <div>
+            {{#each post.comments as |comment|}}
+            {{comment.user.name}}
+            {{comment.content}}
+            {{/each}}
+        </div>
+
+        <div>
+            {{#if logged_in}}
+            <form id="createCommentForm">
+                <div>Add Comment</div>
+                <textarea name="" id="textContent" cols="30" rows="2"></textarea>
+                <input id="handlePostId" type="hidden" value="{{post.id}}">
+                <button class="btnCommentForm" type="submit">Submit</button>
+            </form>
+        </div>
+        {{!-- FOOTER --}}
+        <div class="post-footer">
+
+        </div>
+    </section>
+    
+    <script src="/js/createComment.js"></script>
+</body>

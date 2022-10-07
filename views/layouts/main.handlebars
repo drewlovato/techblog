@@ -8,16 +8,32 @@
     {{!-- STYLES --}}
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="/dashboard">Dashboard</a></li>
-            <li><a href="/account">My Account</a></li>
-            <li><a href="/changePassword">Change Password</a></li>
-            <li>Logout</li>
-        </ul>
-    </nav>
+    <body>
+        {{!-- NAVIGATION --}}
+        <nav class="navbar">
+            <ul>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/account">My Account</a></li>
+                <li><a href="/changePassword">Change Password</a></li>
+                <li>Logout</li>
+            </ul>
+        </nav>
 
-    
-</body>
+        {{!-- BODY --}}
+        <section>
+            <div>
+                {{{body}}}
+            </div>
+        </section>
+
+        {{!-- FOOTER --}}
+        <footer>
+            <div>techblog</div>
+        </footer>
+        
+        {{!-- SCRIPT --}}
+        {{#if logged_in}}
+        <script src="/js/logout.js"></script>
+        {{/if}}
+    </body>
 </html>
