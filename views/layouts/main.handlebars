@@ -9,28 +9,33 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
     <body>
+        <div>techblog</div>
         {{!-- NAVIGATION --}}
+        {{#if logged_in}}
         <nav class="navbar">
             <ul>
                 <li><a href="/dashboard">Dashboard</a></li>
-                <li><a href="/account">My Account</a></li>
+                <li><a href="/createAccount">My Account</a></li>
                 <li><a href="/changePassword">Change Password</a></li>
                 <li>Logout</li>
             </ul>
         </nav>
+        {{else}}
+            <a class="btnLogin" href="/login">Login</a>
+        {{/if}}
 
         {{!-- BODY --}}
-        <section>
-            <div>
+        <section class="body-container">
+            <div class="body-data">
                 {{{body}}}
             </div>
         </section>
 
         {{!-- FOOTER --}}
         <footer>
-            <div>techblog</div>
+            
         </footer>
-        
+
         {{!-- SCRIPT --}}
         {{#if logged_in}}
         <script src="/js/logout.js"></script>
