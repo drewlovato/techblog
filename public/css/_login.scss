@@ -1,0 +1,91 @@
+.body-container {
+    width: 25%;
+    border-radius: .2rem;
+    margin-left: 38%;
+    margin-bottom: 10rem;
+}
+
+#loginForm {
+    background-color: white;
+
+}
+
+.login-container {
+    display: block;
+    padding: 3rem;
+
+
+    .form-title {
+        font-size: $titleFontSize;
+        font-family: $titleFont;
+        color: $titleColor;
+        font-weight: $titleWeight;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .input-section {
+        display: block;
+        margin-bottom: 2rem;
+
+        #label-input {
+            font-size: $paragraphFontSize;
+            font-family: $paragraphFont;
+            color: $paragraphColor;
+            font-weight: $paragraphWeight;
+            margin-bottom: 2rem;
+        }
+
+        #textEmail {
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        #textPassword {
+            width: 100%;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .btnSubmit {
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0 1rem 0;
+
+        .btn {
+            border: none;
+            padding: 1rem;
+            background-color: $buttonColor;
+            font-family: $paragraphFont;
+            display: flex;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transition: .5s;
+            background-color: $buttonColorHover;
+        }
+    }
+
+    .sign-up-section {
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        font-family: $paragraphFont;
+        color: $paragraphColor;
+        width: 100%;
+        font-size: .75rem;
+
+
+        .sign-up-link {
+            margin-left: .2rem;
+            text-decoration: none;
+        }
+
+    }
+}

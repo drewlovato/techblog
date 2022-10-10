@@ -1,0 +1,59 @@
+// title font variables
+$titleFont: 'Work Sans', sans-serif;
+$titleFontSize: 1.5rem;
+$titleColor: rgb(0, 182, 18);
+$titleWeight: 500;
+
+// paragraph font variables
+$paragraphFont: 'Work Sans', sans-serif;
+$paragraphFontSize: .8rem;
+$paragraphColor: rgb(0, 182, 18);
+$paragraphWeight: 600;
+
+// button color variable
+$buttonColor: rgb(0, 182, 18);
+$buttonColorHover: rgb(107, 170, 114);
+
+// imports
+@import "./login";
+
+.body {
+    background-color: rgb(254, 217, 217);
+    width: 100%;
+}
+
+.body-title {
+    font-family: 'Silkscreen', cursive;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    color: rgb(0, 182, 18);
+    margin: 4rem 0 4rem 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+
+    ul {
+        display: flex;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        margin: 5rem;
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 500;
+        color: rgb(0, 182, 18);
+    }
+
+    a:hover {
+        transition: .5s;
+        color: #ed6e5d;
+    }
+}
