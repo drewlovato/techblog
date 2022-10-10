@@ -1,0 +1,13 @@
+<section class="">
+    {{#each posts as |post|}}
+    <div class="post-title">
+        {{post.title}}
+    </div>
+    <div class="post-data">
+        {{post.user.name}}
+    </div>
+    <ul>
+        <li>{{content}}</li>
+    </ul>
+    {{/each}}
+</section>
