@@ -27,13 +27,15 @@ router.post('/login', async (req, res) => {
             return;
         }
 
+        const correctPassword = userData.checkPassword(req.body.password);
+
         if (!correctPassword) {
             res.status(400).json({ message: 'Incorrect email or password, please try again'});
             return;
         }
 
         req.session.save(() => {
-            req.session.user.id = userData.id;
+            req.session.user_id = userData.id;
             req.session.logged_in = true;
 
             res.json({ user: userData, message: "Login Succesfull"});
@@ -47,9 +49,7 @@ router.post('/login', async (req, res) => {
 router.put("/password/", isAuthorized, async(req,res) => {
     try {
         const userDataDB = await User.findByPk(req.session.user_id);
-        const correctPassword = userDataDB.checkPassword(
-            req.body.presentPassword
-        );
+        const correctPassword = userDataDB.checkPassword(req.body.presentPassword);
         if(correctPassword) {
             const userData = await User.update(
                 {
