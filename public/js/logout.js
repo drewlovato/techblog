@@ -11,4 +11,4 @@ const logout = async () => {
   }
 };
 
-document.querySelector("#logutForm").addEventListener("click", logout);
+document.querySelector("#logout").addEventListener("click", logout);
