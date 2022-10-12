@@ -1,0 +1,14 @@
+<form id="editPostForm">
+    <div>
+        Edit Post
+        <label id="labelPostID">{{post.id}}</label>
+    </div>
+    <div>
+        <label for="textTitle">Title</label>
+        <input type="text" id="textTitle" value="{{post.title}}" />
+    </div>
+    <div>
+        <label for="textContent">Content</label>
+        <textarea id="textContent" rows="5">{{post.content}}</textarea>
+    </div>
+</form>

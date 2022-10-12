@@ -20,21 +20,20 @@
 </head>
 
 <body class="body">
-    <div class="body-title">techblog</div>
+    <a href="/dashboard" class="body-title">techblog</a>
     {{!-- NAVIGATION --}}
     {{#if logged_in}}
     <nav class="navbar">
         <ul>
-            <li><a href="/dashboard">Dashboard</a></li>
-            <li><a href="/createAccount">My Account</a></li>
-            <li><a href="/changePassword">Change Password</a></li>
-            <li><a id="logout" href="#">Logout</a></li>
+            <li><a href="/dashboard">DASH</a></li>
+            {{!-- <li><a href="/createAccount">My Account</a></li> --}}
+            <li><a href="/changePassword">PROFILE</a></li>
+            <li><a id="logout" href="#">LOGOUT</a></li>
         </ul>
-        {{else}}
-        <a class="btnLogin" href="/login">Login</a>
-        {{/if}}
+        {{!-- {{else}}
+        <a class="btnLogin" href="/login">Login</a> --}}
     </nav>
-
+    {{/if}}
     {{!-- BODY --}}
     <section class="body-container">
         <div class="body-data">

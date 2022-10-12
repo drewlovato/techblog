@@ -1,24 +1,29 @@
 <section class="dashboard-container">
     <div class="dashboard-header">
-        Posts
-    </div>
-    <div class="table-headers">
-        <th>Title</th>
-        <th>Date Created</th>
-        <th>Owner</th>
+        POSTS
     </div>
     <div class="table-body">
         {{#each posts as |post|}}
         <tr>
-            <th>{{id}}</th>
-            <td>{{title}}</td>
-            <td>{{user.name}}</td>
-            <td><a href="/editPost/{{id}}" class="btn">Edit</a></td>
-            <td><a href="/deletePost/{{id}}" class="btn">Delete</a></td>
+            <div class="table-title-con">
+                <div class="table-id">#{{id}}</div>
+                <div class="table-title">{{title}}</div>
+            </div>
+            <div class="table-content-con">
+                <div class="table-content-data">{{content}}</div>
+            </div>
+            <hr>
+            <div class="table-owner-con">
+                <div class="table-title">OWNER: </div>
+                <div class="table-data">{{user.name}}</div>
+            </div>
+            <div class="table-buttons">
+                <span><a href="/editPost/{{id}}" class="btnEdit">EDIT</a></span>
+                <span><a href="/deletePost/{{id}}" class="btnDelete">DELETE</a></span>
+                <span><a href="/createPost" class="btnCreatePost">+ POST</a></span>
+            </div>
         </tr>
         {{/each}}
     </div>
-    <div class="btnCreatePost">
-        <a href="/createPost">Create Post</a>
-    </div>
+
 </section>

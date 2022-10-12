@@ -1,14 +1,14 @@
 [
     {
-        "title": "This is a post",
-        "content": "This is the content"
+        "title": "Pablo Picasso",
+        "content": "At his baptism, Picasso was christened Pablo Diego José Francisco de Paula Juan Nepomuceno María de los Remedios Cipriano de la Santísima Trinidad Martyr Patricio Clito Ruíz y Picasso."
     },
     {
-        "title": "This is the second post",
-        "content": "This is the second content"
+        "title": "Caravaggio",
+        "content": "In 1969, Caravaggio’s Nativity with St. Francis and Saint Lawrence was stolen from the Oratory of Saint Lawrence in Palermo."
     },
     {
-        "title": "This is the third post",
-        "content": "This is the third content"
+        "title": "Leonardo da Vinci",
+        "content": "Though often referred to simply as “da Vinci,” the reality is that Leonardo did not have a last name. Da Vinci literally translates to “of Vinci,” which is his hometown."
     }
 ]
