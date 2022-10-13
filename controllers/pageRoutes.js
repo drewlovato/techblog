@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
 
     res.render("home", {
       posts,
-      loggedIn: req.session.loggedIn,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -68,7 +68,7 @@ router.get("/post/:id", async (req, res) => {
 
     res.render("post", {
       post,
-      loggedIn: req.session.loggedIn,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -101,7 +101,7 @@ router.get("/editPost/:id", isAuthorized, async (req, res) => {
 
     res.render("editPost", {
       post,
-      logged_in: req.session.logged_id,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -204,7 +204,7 @@ router.get("/changePassword/", isAuthorized, async (req, res) => {
 
     res.render("changePassword", {
       user,
-      logged_in: req.session.logged,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -214,7 +214,7 @@ router.get("/changePassword/", isAuthorized, async (req, res) => {
 // GET Login page
 router.get("/login", async (req, res) => {
   try {
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
       res.redirect("/");
       return;
     } else {

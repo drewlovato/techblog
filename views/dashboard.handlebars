@@ -18,9 +18,13 @@
                 <div class="table-data">{{user.name}}</div>
             </div>
             <div class="table-buttons">
-                <span><a href="/editPost/{{id}}" class="btnEdit">EDIT</a></span>
-                <span><a href="/deletePost/{{id}}" class="btnDelete">DELETE</a></span>
-                <span><a href="/createPost" class="btnCreatePost">+ POST</a></span>
+                <div class="create-post-section">
+                    <span><a href="/createPost" class="btnCreatePost">+ POST</a></span>
+                </div>
+                <div class="manipulate-post-section">
+                    <span><a href="/editPost/{{id}}" class="btnEdit">EDIT</a></span>
+                    <span><a href="/deletePost/{{id}}" class="btnDelete">DELETE</a></span>
+                </div>
             </div>
         </tr>
         {{/each}}

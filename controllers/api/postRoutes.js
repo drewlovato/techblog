@@ -5,7 +5,7 @@ const isAuthorized = require('../../utils/auth');
 // GET post by ID
 router.get('/:id', isAuthorized, async (req,res) => {
     try {
-        const postData = await Post.findByPk(req.params.id, {
+        const data = await Post.findByPk(req.params.id, {
         include : [
             { 
             model: User, 
@@ -13,9 +13,9 @@ router.get('/:id', isAuthorized, async (req,res) => {
         ],
     });
     const post = data.get({ plain: true });
-    res.render("post", {
+    res.render("posts", {
         post,
-        loggedIn: req.session.loggedIn,
+        logged_in: req.session.logged_in,
     });
     } catch (err) {
         console.log(err);
