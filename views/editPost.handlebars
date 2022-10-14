@@ -1,14 +1,16 @@
 <form id="editPostForm">
-    <div>
-        Edit Post
-        <label id="labelPostID">{{post.id}}</label>
-    </div>
-    <div>
-        <label for="textTitle">Title</label>
-        <input type="text" id="textTitle" value="{{post.title}}" />
-    </div>
-    <div>
-        <label for="textContent">Content</label>
-        <textarea id="textContent" rows="5">{{post.content}}</textarea>
+    <div class="edit-post-container">
+        <div class="edit-post-id">
+            Edit Post
+            <label id="labelPostID">{{post.id}}</label>
+        </div>
+        <div class="edit-post-title">
+            <label for="textTitle">Title</label>
+            <input type="text" id="textTitle" value="{{post.title}}" />
+        </div>
+        <div class="edit-post-content">
+            <label for="textContent">Content</label>
+            <textarea id="textContent" rows="10">{{post.content}}</textarea>
+        </div>
     </div>
 </form>

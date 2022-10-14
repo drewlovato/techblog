@@ -13,7 +13,7 @@ router.get('/:id', isAuthorized, async (req,res) => {
         ],
     });
     const post = data.get({ plain: true });
-    res.render("posts", {
+    res.render("post", {
         post,
         logged_in: req.session.logged_in,
     });
@@ -27,7 +27,7 @@ router.get('/:id', isAuthorized, async (req,res) => {
 router.post('/', isAuthorized, async (req, res) => {
     try {
         const data = await Post.create({
-        title: req.body.name,
+        title: req.body.title,
         content: req.body.content,
         user_id: req.session.user_id,
         });

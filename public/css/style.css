@@ -87,7 +87,7 @@
 .dashboard-container {
   background-color: white;
   width: 53rem;
-  padding: 5rem;
+  padding: 5rem 5rem 2rem 5rem;
   border-radius: 0.2rem;
   box-shadow: 20px 20px 50px rgb(185, 125, 125);
   margin-bottom: 3rem;
@@ -164,7 +164,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 2rem;
+  margin: 2rem 0 3rem 0;
 }
 .table-buttons .create-post-section {
   justify-content: flex-start;
@@ -182,6 +182,9 @@
 .table-buttons .create-post-section .btnCreatePost:hover {
   transition: 0.5s;
   color: rgb(95, 172, 103);
+}
+.table-buttons .manipulate-post-section {
+  display: flex;
 }
 .table-buttons .manipulate-post-section .btnEdit {
   font-family: "Work Sans", sans-serif;
@@ -326,6 +329,66 @@
   color: rgb(0, 182, 18);
   border-color: rgb(0, 182, 18);
   border: solid;
+}
+
+.create-full-container {
+  background-color: white;
+  width: 53rem;
+  padding: 5rem;
+  border-radius: 0.2rem;
+  box-shadow: 20px 20px 50px rgb(185, 125, 125);
+  margin-bottom: 3rem;
+  display: block;
+}
+.create-full-container .create-post-header {
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.5rem;
+  color: rgb(0, 182, 18);
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+.create-full-container .title-container {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.create-full-container .title-container .post-title {
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.75rem;
+  color: rgb(168, 168, 168);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.create-full-container .title-container .post-title-input {
+  width: 100%;
+  height: 2rem;
+  background-color: rgb(192, 192, 192);
+  border: none;
+}
+.create-full-container .content-container {
+  width: 100%;
+}
+.create-full-container .content-container .content-title {
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.75rem;
+  color: rgb(168, 168, 168);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.create-full-container .content-container .content-input .content-textarea {
+  width: 100%;
+  height: 10rem;
+  background-color: rgb(192, 192, 192);
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+.edit-post-container {
+  background-color: white;
+  width: 53rem;
+  padding: 5rem 5rem 2rem 5rem;
+  border-radius: 0.2rem;
+  box-shadow: 20px 20px 50px rgb(185, 125, 125);
+  margin-bottom: 3rem;
 }
 
 .body {

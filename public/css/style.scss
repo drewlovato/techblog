@@ -18,7 +18,9 @@ $buttonBorderHover: rgb(0, 182, 18);
 // imports
 @import "./login";
 @import "./dashboard";
-@import "./changePassword.scss";
+@import "./changePassword";
+@import "./createPost";
+@import "./editPost";
 
 .body {
     // background-color: rgb(149, 187, 213);

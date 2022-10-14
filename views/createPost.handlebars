@@ -1,20 +1,28 @@
-<section>
-    <form id="createPostForm">
-        <div>
-            Create Post
+<form id="createPostForm"></form>
+<section class="create-full-container-">
+    <div class="create-post-header">
+        Create Post
+    </div>
+    <div class="title-container">
+        <div class="post-title">
+            Title
         </div>
-        <div>
-            <label>Title</label>
-            <input type="text" id="textTitle">
+        <div class="post-title-input">
+            <input type="text" id="textTitle" class="post-title-input">
         </div>
-        <div>
+    </div>
+    <div class="content-container">
+        <div class="content-title">
             <label for="textContent">Content</label>
-            <textarea name="" id="textContent" rows="10"></textarea>
         </div>
-        <div>
-            <button class="btnSubmit">Submit</button>
+        <div class="content-input">
+            <textarea name="" id="textContent" class="content-textarea" rows="10"></textarea>
         </div>
-    </form>
+    </div>
+    <div>
+        <button class="btnSubmit" type="submit">Submit</button>
+    </div>
 </section>
+</form>
 
 <script src="/js/createPost.js"></script>

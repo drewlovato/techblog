@@ -1,8 +1,8 @@
 const postFormHandler = async (event) => {
   event.preventDefault();
 
-  const title = document.querySelector("#textTitle").value.trim;
-  const content = document.querySelector("#textContent").value.trim;
+  const title = document.querySelector("#textTitle").value;
+  const content = document.querySelector("#textContent").value;
 
   if (title && content) {
     const response = await fetch(`api/posts/`, {
