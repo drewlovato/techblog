@@ -331,25 +331,107 @@
   border: solid;
 }
 
+.edit-post-container {
+  background-color: white;
+  width: 45rem;
+  padding: 5rem;
+  border-radius: 0.2rem;
+  box-shadow: 20px 20px 50px rgb(185, 125, 125);
+  margin-bottom: 3rem;
+}
+.edit-post-container .edit-post-id-con .post-id-title {
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.5rem;
+  color: rgb(0, 182, 18);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  margin-left: 1.5rem;
+}
+.edit-post-container .edit-post-title {
+  width: 100%;
+  display: block;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.edit-post-container .edit-post-title .title-desc {
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.75rem;
+  color: rgb(168, 168, 168);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: block;
+  width: 100%;
+}
+.edit-post-container .edit-post-title .title-post {
+  width: calc(100% - 1rem);
+  height: 2rem;
+  background-color: rgb(192, 192, 192);
+  border: none;
+  padding-left: 1rem;
+  color: white;
+}
+.edit-post-container .edit-post-content {
+  width: 100%;
+  display: block;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.edit-post-container .edit-post-content .post-content-title {
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.75rem;
+  color: rgb(168, 168, 168);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: block;
+  width: 100%;
+}
+.edit-post-container .edit-post-content .post-content {
+  font-family: "Work Sans", sans-serif;
+  width: calc(100% - 2rem);
+  height: 10rem;
+  background-color: rgb(192, 192, 192);
+  border: none;
+  padding: 1rem;
+  color: white;
+}
+.edit-post-container .edit-submit-btn {
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.85rem;
+  color: white;
+  background-color: rgb(0, 182, 18);
+  box-shadow: 10px 10px 20px rgb(209, 209, 209);
+  text-decoration: none;
+  padding: 0.75rem;
+  border: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.edit-post-container .edit-submit-btn:hover {
+  transition: 0.5s;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 182, 18);
+  border-color: rgb(0, 182, 18);
+  border: solid;
+}
+
 .create-full-container {
   background-color: white;
   width: 53rem;
   padding: 5rem;
   border-radius: 0.2rem;
   box-shadow: 20px 20px 50px rgb(185, 125, 125);
-  margin-bottom: 3rem;
-  display: block;
 }
 .create-full-container .create-post-header {
   font-family: "Work Sans", sans-serif;
   font-size: 1.5rem;
   color: rgb(0, 182, 18);
   font-weight: 500;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  margin-left: 1.5rem;
 }
 .create-full-container .title-container {
-  width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .create-full-container .title-container .post-title {
   font-family: "Work Sans", sans-serif;
@@ -357,15 +439,16 @@
   color: rgb(168, 168, 168);
   font-weight: 500;
   margin-bottom: 1rem;
-}
-.create-full-container .title-container .post-title-input {
+  display: block;
   width: 100%;
+}
+.create-full-container .title-container .post-title-input-con .post-title-input {
+  width: calc(100% - 1rem);
   height: 2rem;
   background-color: rgb(192, 192, 192);
   border: none;
-}
-.create-full-container .content-container {
-  width: 100%;
+  padding-left: 1rem;
+  color: white;
 }
 .create-full-container .content-container .content-title {
   font-family: "Work Sans", sans-serif;
@@ -373,22 +456,38 @@
   color: rgb(168, 168, 168);
   font-weight: 500;
   margin-bottom: 1rem;
-}
-.create-full-container .content-container .content-input .content-textarea {
+  display: block;
   width: 100%;
+}
+.create-full-container .content-container .content-textarea {
+  width: calc(100% - 2rem);
   height: 10rem;
   background-color: rgb(192, 192, 192);
   border: none;
-  margin-bottom: 1.5rem;
+  padding: 1rem;
+  color: white;
+  margin-bottom: 1rem;
+  font-family: "Work Sans", sans-serif;
 }
-
-.edit-post-container {
-  background-color: white;
-  width: 53rem;
-  padding: 5rem 5rem 2rem 5rem;
-  border-radius: 0.2rem;
-  box-shadow: 20px 20px 50px rgb(185, 125, 125);
-  margin-bottom: 3rem;
+.create-full-container .btnSubmit {
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.85rem;
+  color: white;
+  background-color: rgb(0, 182, 18);
+  box-shadow: 10px 10px 20px rgb(209, 209, 209);
+  text-decoration: none;
+  padding: 0.75rem;
+  border: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.create-full-container .btnSubmit:hover {
+  transition: 0.5s;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 182, 18);
+  border-color: rgb(0, 182, 18);
+  border: solid;
 }
 
 .body {

@@ -1,0 +1,15 @@
+<form id="deleteCommentForm">
+    <div>
+        Are you sure you want to delete?
+    </div>
+    <ul>
+        <li>ID:<label id="labelCommentID">{{id}}</label></li>
+        <li>POST:{{title}}<input id="hiddenPostID" value="{{comment.post.id}}"></li>
+        <li>CONTENT:{{content}}</li>
+        <li>OWNER:{{user.name}}</li>
+    </ul>
+    <div>
+        <button type="submit">Delete</button>
+        <a href="/dashboard/{{comment.post.id}}">Cancel</a>
+    </div>
+</form>

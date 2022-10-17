@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
 
     const posts = data.map((post) => post.get({ plain: true }));
 
-    res.render("home", {
+    res.render("login", {
       posts,
       logged_in: req.session.logged_in,
     });
@@ -96,15 +96,15 @@ router.get("/editPost/:id", isAuthorized, async (req, res) => {
       ],
       order: [[Comment, "id", "DESC"]],
     });
-
-    const article = data.get({ plain: true });
+    console.log(data);
+    const post = data.get({ plain: true });
 
     res.render("editPost", {
       post,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(520).json(err);
   }
 });
 
