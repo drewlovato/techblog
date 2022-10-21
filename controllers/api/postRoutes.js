@@ -40,7 +40,7 @@ router.post('/', isAuthorized, async (req, res) => {
 // UPDATE existing post
 router.put('/:id', isAuthorized, async (req, res) => {
     try{
-        const updatePost = await Post.update(
+        const data = await Post.update(
             {
                 id: req.params.id,
                 title: req.body.title,
@@ -48,12 +48,12 @@ router.put('/:id', isAuthorized, async (req, res) => {
             },
             {
                 where: {
-                    id:req.params.id,
+                    id: req.params.id,
                     user_id: req.body.user_id,
                 },
             }
         );
-        res.status(200).json(updatePost);
+        res.status(200).json(data);
     } catch (err) {
         res.status(400).json(err);
     }
@@ -62,13 +62,13 @@ router.put('/:id', isAuthorized, async (req, res) => {
 // DELETE existing post
 router.delete('/:id', isAuthorized, async (req, res) => {
     try {
-        const postData = await Post.destroy({
+        const data = await Post.destroy({
             where: {
                 id: req.params.id,
                 user_id: req.session.user_id,
             },
         });
-        res.status(200).json(postData);
+        res.status(200).json(data);
     } catch (err){
         res.status(500).json(err);
     }
