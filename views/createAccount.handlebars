@@ -1,25 +1,27 @@
 <form id="createAccountForm">
-    <div class="form-title">
-        Sign Up
-    </div>
-    <div class="input-section">
-        <label for="textUserName">User Name</label>
-        <input type="text" id="textUserName" />
-    </div>
-    <div class="input-section">
-        <label for="textEmail">Email</label>
-        <input type="text" id="textEmail" />
-    </div>
-    <div class="input-section">
-        <label for="textPassword">Password</label>
-        <input type="text" id="textPassword" />
-    </div>
-    <div class="input-section">
-        <button class="btn" type="submit">Submit</button>
-    </div>
-    <div>
-        <a href="/login">Login</a>
-    </div>
+    <section class="create-account-container">
+        <div class="form-title">
+            Sign Up
+        </div>
+        <div class="input-section">
+            <label for="textUserName" class="label-input">User Name</label>
+            <input type="text" id="textUserName" class="inputBox"/>
+        </div>
+        <div class="input-section">
+            <label for="textEmail" class="label-input">Email</label>
+            <input type="text" id="textEmail" class="inputBox"/>
+        </div>
+        <div class="input-section">
+            <label for="textPassword" class="label-input">Password</label>
+            <input type="text" id="textPassword" class="inputBox"/>
+        </div>
+        <div class="button-section">
+            <button class="btn" type="submit">Submit</button>
+        </div>
+        <div class="login-section">
+            Already have an account? <a href="/login" class="login-link">Login</a>
+        </div>
+    </section>
 </form>
 
 <script src="/js/createAccount.js"></script>
