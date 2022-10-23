@@ -3,6 +3,9 @@
         POSTS
     </div>
     <div class="table-body">
+        <div class="create-post-section">
+                <span><a href="/createPost" class="btnCreatePost">+ POST</a></span>
+        </div>
         {{#each posts as |post|}}
         <tr>
             <div class="table-title-con">
@@ -17,10 +20,7 @@
                 <div class="table-title">OWNER: </div>
                 <div class="table-data">{{user.name}}</div>
             </div>
-            <div class="table-buttons">
-                <div class="create-post-section">
-                    <span><a href="/createPost" class="btnCreatePost">+ POST</a></span>
-                </div>
+            <div class="table-buttons"></div>
                 <div class="manipulate-post-section">
                     <span><a href="/editPost/{{id}}" class="btnEdit">EDIT</a></span>
                     <span><a href="/deletePost/{{id}}" class="btnDelete">DELETE</a></span>
