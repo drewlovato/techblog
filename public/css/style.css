@@ -93,12 +93,31 @@
   margin-bottom: 3rem;
 }
 .dashboard-container .dashboard-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.dashboard-container .dashboard-header .post-header {
   font-family: "Work Sans", sans-serif;
   font-size: 1.5rem;
   color: rgb(0, 182, 18);
   font-weight: 500;
-  margin-bottom: 1rem;
-  margin-left: 1.5rem;
+  display: flex;
+}
+.dashboard-container .dashboard-header .btnCreatePost {
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.85rem;
+  padding: 0.75rem;
+  color: rgb(0, 182, 18);
+  text-decoration: none;
+  font-weight: 700;
+  justify-content: center;
+}
+.dashboard-container .dashboard-header .btnCreatePost:hover {
+  transition: 0.5s;
+  color: rgb(95, 172, 103);
 }
 .dashboard-container .table-id-con {
   font-family: "Work Sans", sans-serif;
@@ -165,23 +184,6 @@
   align-items: center;
   justify-content: space-between;
   margin: 2rem 0 3rem 0;
-}
-.table-buttons .create-post-section {
-  justify-content: flex-start;
-}
-.table-buttons .create-post-section .btnCreatePost {
-  font-family: "Work Sans", sans-serif;
-  font-size: 0.85rem;
-  color: rgb(0, 182, 18);
-  text-decoration: none;
-  font-weight: 700;
-  margin-top: 2rem;
-  margin-left: 1rem;
-  padding: 0.75rem;
-}
-.table-buttons .create-post-section .btnCreatePost:hover {
-  transition: 0.5s;
-  color: rgb(95, 172, 103);
 }
 .table-buttons .manipulate-post-section {
   display: flex;

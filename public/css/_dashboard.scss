@@ -1,3 +1,4 @@
+
 .dashboard-container {
     background-color: white;
     width: 53rem;
@@ -7,12 +8,35 @@
     margin-bottom: 3rem;
 
     .dashboard-header {
-        font-family: $titleFont;
-        font-size: $titleFontSize;
-        color: $titleColor;
-        font-weight: $titleWeight;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         margin-bottom: 1rem;
-        margin-left: 1.5rem;
+
+
+        .post-header{
+            font-family: $titleFont;
+            font-size: $titleFontSize;
+            color: $titleColor;
+            font-weight: $titleWeight;
+            display: flex;
+        }
+
+        .btnCreatePost {
+            font-family: $paragraphFont;
+            font-size: .85rem;
+            padding: .75rem;
+            color: rgb(0, 182, 18);;
+            text-decoration: none;
+            font-weight: 700;
+            justify-content: center;
+        }
+
+        .btnCreatePost:hover {
+            transition: .5s;
+            color: rgb(95, 172, 103);
+        }
     }
 
     .table-id-con {
@@ -89,26 +113,6 @@
     align-items: center;
     justify-content: space-between;
     margin: 2rem 0 3rem 0;
-
-    .create-post-section {
-        justify-content: flex-start;
-
-        .btnCreatePost {
-            font-family: $paragraphFont;
-            font-size: .85rem;
-            color: rgb(0, 182, 18);
-            text-decoration: none;
-            font-weight: 700;
-            margin-top: 2rem;
-            margin-left: 1rem;
-            padding: .75rem;
-        }
-
-        .btnCreatePost:hover {
-            transition: .5s;
-            color: rgb(95, 172, 103);
-        }
-    }
 
     .manipulate-post-section {
         display: flex;
