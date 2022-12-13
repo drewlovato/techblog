@@ -1,4 +1,3 @@
-<body>
     <section class="post-card">
 
         <div class="post-header">
@@ -8,6 +7,8 @@
         <div class="post-body">
             <div class="post-body-data">
                 {{post.user.name}}
+                on 
+                {{format_datetime post.date_created}}
             </div>
         </div>
 
@@ -17,7 +18,7 @@
 
         <div>
             {{#each post.comments as |comment|}}
-            {{comment.user.name}}
+            {{comment.user.name}} on {{format_datetime comment.date_created}}
             {{comment.content}}
             {{/each}}
         </div>
@@ -35,7 +36,8 @@
         <div class="post-footer">
 
         </div>
+
+    {{/if}}
     </section>
     
     <script src="/js/createComment.js"></script>
-</body>

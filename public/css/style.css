@@ -333,7 +333,8 @@
   border: solid;
 }
 
-.edit-post-container {
+.post-body {
+  display: block;
   background-color: white;
   width: 45rem;
   padding: 5rem;
@@ -341,7 +342,7 @@
   box-shadow: 20px 20px 50px rgb(185, 125, 125);
   margin-bottom: 3rem;
 }
-.edit-post-container .edit-post-id-con .post-id-title {
+.post-body .edit-post-container .edit-post-id-con .post-id-title {
   font-family: "Work Sans", sans-serif;
   font-size: 1.5rem;
   color: rgb(0, 182, 18);
@@ -349,13 +350,20 @@
   margin-bottom: 1rem;
   margin-left: 1.5rem;
 }
-.edit-post-container .edit-post-title {
+.post-body .edit-post-container .post-id-title {
+  display: flex;
+  justify-content: space-between;
+}
+.post-body .edit-post-container .post-id-title label {
+  margin-right: 1.5rem;
+}
+.post-body .edit-post-container .edit-post-title {
   width: 100%;
   display: block;
   flex-direction: column;
   margin-bottom: 1rem;
 }
-.edit-post-container .edit-post-title .title-desc {
+.post-body .edit-post-container .edit-post-title .title-desc {
   font-family: "Work Sans", sans-serif;
   font-size: 0.75rem;
   color: rgb(168, 168, 168);
@@ -364,7 +372,7 @@
   display: block;
   width: 100%;
 }
-.edit-post-container .edit-post-title .title-post {
+.post-body .edit-post-container .edit-post-title .title-post {
   width: calc(100% - 1rem);
   height: 2rem;
   background-color: rgb(192, 192, 192);
@@ -372,13 +380,10 @@
   padding-left: 1rem;
   color: white;
 }
-.edit-post-container .edit-post-content {
-  width: 100%;
-  display: block;
-  flex-direction: column;
+.post-body .edit-post-container .date-created {
   margin-bottom: 1rem;
 }
-.edit-post-container .edit-post-content .post-content-title {
+.post-body .edit-post-container .date-created label {
   font-family: "Work Sans", sans-serif;
   font-size: 0.75rem;
   color: rgb(168, 168, 168);
@@ -387,7 +392,29 @@
   display: block;
   width: 100%;
 }
-.edit-post-container .edit-post-content .post-content {
+.post-body .edit-post-container .date-created .textDateCreated {
+  font-family: "Work Sans", sans-serif;
+  width: calc(100% - 2rem);
+  border: none;
+  padding: 1rem;
+  color: green;
+}
+.post-body .edit-post-container .edit-post-content {
+  width: 100%;
+  display: block;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.post-body .edit-post-container .edit-post-content .post-content-title {
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.75rem;
+  color: rgb(168, 168, 168);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: block;
+  width: 100%;
+}
+.post-body .edit-post-container .edit-post-content .post-content {
   font-family: "Work Sans", sans-serif;
   width: calc(100% - 2rem);
   height: 10rem;
@@ -396,7 +423,7 @@
   padding: 1rem;
   color: white;
 }
-.edit-post-container .edit-submit-btn {
+.post-body .edit-post-container .edit-submit-btn {
   font-family: "Work Sans", sans-serif;
   font-size: 0.85rem;
   color: white;
@@ -408,15 +435,15 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 2rem;
 }
-.edit-post-container .edit-submit-btn:hover {
+.post-body .edit-post-container .edit-submit-btn:hover {
   transition: 0.5s;
   background-color: rgb(255, 255, 255);
   color: rgb(0, 182, 18);
   border-color: rgb(0, 182, 18);
   border: solid;
 }
-
 .create-full-container {
   background-color: white;
   width: 53rem;
