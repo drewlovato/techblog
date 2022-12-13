@@ -3,7 +3,7 @@
     <div class="edit-post-container">
       <div class="edit-post-id-con">
         <div class="post-id-title">Edit Post
-          <label id="lablePostID">#{{post.id}}</label>
+          <label id="labelPostID">#{{post.id}}</label>
         </div>
       </div>
       <div class="edit-post-title">
@@ -24,10 +24,10 @@
         >{{post.content}}</textarea>
       </div>
       <div class="date-created">
-        <label for="txtDateCreated">Date Created:</label>
+        <label for="textDateCreated">Date Created:</label>
         <input
           type="text"
-          class="textDateCreated"
+          id="textDateCreated"
           value="{{format_datetime post.date_created}}"
         />
       </div>

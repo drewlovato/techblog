@@ -1,7 +1,7 @@
 const formHandler = async (event) => {
   event.preventDefault();
 
-  const postId = document.querySelector("#labelPostId").textContent.trim();
+  const postId = document.querySelector("#labelPostID").textContent.trim();
   const title = document.querySelector("#textTitle").value.trim();
   const content = document.querySelector("#textContent").value.trim();
   const dateCreated = document.querySelector("#textDateCreated").value.trim();
