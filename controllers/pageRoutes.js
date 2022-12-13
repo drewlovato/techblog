@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const res = require("express/lib/response");
 const { Post, User, Comment } = require("../models");
 const isAuthorized = require("../utils/auth");
 
@@ -7,7 +6,10 @@ router.get("/", async (req, res) => {
   try {
     const data = await Post.findAll({
       include: [{ model: User }],
-      order: [["id", "DESC"]],
+      order: [
+        ["date_created", "DESC"],
+        ["id", "DESC"],
+      ],
     });
 
     const posts = data.map((post) => post.get({ plain: true }));
@@ -17,6 +19,7 @@ router.get("/", async (req, res) => {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -28,7 +31,10 @@ router.get("/dashboard", isAuthorized, async (req, res) => {
       where: {
         user_id: req.session.user_id,
       },
-      order: [["id", "DESC"]],
+      order: [
+        ["date_created", "DESC"],
+        ["id", "DESC"],
+      ],
     });
 
     const posts = data.map((post) => post.get({ plain: true }));
@@ -42,10 +48,10 @@ router.get("/dashboard", isAuthorized, async (req, res) => {
   }
 });
 
-// GET view of one Post
+// GET view of post page
 router.get("/post/:id", async (req, res) => {
   try {
-    const postData = await Post.findOne({
+    const postData = await Post.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -53,7 +59,7 @@ router.get("/post/:id", async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ["id", "content"],
+          attributes: ["id", "date_created", "content"],
           include: [
             {
               model: User,
@@ -62,15 +68,19 @@ router.get("/post/:id", async (req, res) => {
           ],
         },
       ],
-      order: [[Comment, "id", "DESC"]],
+      order: [
+        [Comment, "date_created", "DESC"],
+        [Comment, "id", "DESC"],
+      ],
     });
-    const post = postData.get({ plain: true });
+    const post = data.get({ plain: true });
 
     res.render("post", {
       post,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -85,7 +95,7 @@ router.get("/editPost/:id", isAuthorized, async (req, res) => {
       include: [
         {
           model: Comment,
-          attributes: ["id", "content"],
+          attributes: ["id", "date_created", "content"],
           include: [
             {
               model: User,
@@ -94,7 +104,10 @@ router.get("/editPost/:id", isAuthorized, async (req, res) => {
           ],
         },
       ],
-      order: [[Comment, "id", "DESC"]],
+      order: [
+        [Comment, "date_created", "DESC"],
+        [Comment, "id", "DESC"],
+      ],
     });
     console.log(data);
     const post = data.get({ plain: true });
@@ -104,32 +117,8 @@ router.get("/editPost/:id", isAuthorized, async (req, res) => {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
+    console.log(err);
     res.status(520).json(err);
-  }
-});
-
-// GET delete Post page by Id
-router.get("/deletePost/:id", isAuthorized, async (req, res) => {
-  try {
-    const data = await Post.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-        },
-      ],
-      where: {
-        user_id: req.session.user_id,
-      },
-    });
-
-    const post = data.get({ plain: true });
-
-    res.render("deletePost", {
-      post,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(400).json(err);
   }
 });
 
@@ -140,6 +129,7 @@ router.get("/createPost/", isAuthorized, async (req, res) => {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -164,13 +154,14 @@ router.get("/deletePost/:id", isAuthorized, async (req, res) => {
       post,
       logged_in: req.session.logged_in,
     });
-  } catch {
-    res.status(500).json(err);
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
   }
 });
 
-// GET the delete Comment page
-router.get("/deleteComment/;id", isAuthorized, async (req, res) => {
+// GET delete Post page by Id
+router.get("/deleteComment/:id", isAuthorized, async (req, res) => {
   try {
     const data = await Comment.findByPk(req.params.id, {
       include: [
@@ -184,13 +175,15 @@ router.get("/deleteComment/;id", isAuthorized, async (req, res) => {
         },
       ],
     });
+
     const comment = data.get({ plain: true });
 
     res.render("deleteComment", {
       comment,
       logged_in: req.session.logged_in,
     });
-  } catch (err) {
+  } catch {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -207,6 +200,7 @@ router.get("/changePassword/", isAuthorized, async (req, res) => {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });

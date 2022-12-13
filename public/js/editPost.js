@@ -7,7 +7,7 @@ const formHandler = async (event) => {
   const dateCreated = document.querySelector("#textDateCreated").value.trim();
 
   if (postId && title && content && dateCreated) {
-    const response = await fetch(`/api/posts/${postId}`, {
+    const response = await fetch(`/api/post/${postId}`, {
       method: "PUT",
       body: JSON.stringify({
         title,

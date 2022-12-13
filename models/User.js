@@ -50,6 +50,11 @@ User.init(
           updateUserData.password,
           10
         );
+
+        if (this.options.fields.includes("email")) {
+          updateUserData.email = await updateUserData.email.toLowerCase();
+        }
+
         return updateUserData;
       },
     },
