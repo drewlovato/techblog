@@ -1,15 +1,30 @@
-<form id="deleteCommentForm">
-    <div>
-        Are you sure you want to delete?
+<form id="deletePostForm">
+  <div class="form-message">
+    Are you sure you want to delete?
+  </div>
+  <div class="list-container">
+    <div class="list-item">ID:
+      <li><label id="labelPostID">{{post.id}}</label></li>
     </div>
-    <ul>
-        <li>ID:<label id="labelCommentID">{{id}}</label></li>
-        <li>POST:{{title}}<input id="hiddenPostID" value="{{comment.post.id}}"></li>
-        <li>CONTENT:{{content}}</li>
-        <li>OWNER:{{user.name}}</li>
-    </ul>
-    <div>
-        <button type="submit">Delete</button>
-        <a href="/dashboard/{{comment.post.id}}">Cancel</a>
+    <div class="list-item">POST:
+      <li id="hiddenPostID">
+        {{post.title}}
+        {{!-- value="{{comment.post.id}}" --}}
+      </li>
     </div>
+    <div class="list-item">CONTENT:
+      <li>{{post.content}}</li>
+    </div>
+    <div class="list-item">OWNER:
+      <li>{{post.user.name}}</li>
+    </div>
+  </div>
+  <div class="button-section">
+    <button class="btnDelete" type="submit">Delete</button>
+    <button class="btnCancel" href="/dashboard/{{post}}">
+      Cancel
+    </button>
+  </div>
 </form>
+
+<script src="/js/deletePost.js"></script>

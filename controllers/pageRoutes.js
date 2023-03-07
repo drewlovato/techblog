@@ -44,6 +44,7 @@ router.get("/dashboard", isAuthorized, async (req, res) => {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -51,7 +52,7 @@ router.get("/dashboard", isAuthorized, async (req, res) => {
 // GET view of post page
 router.get("/post/:id", async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.params.id, {
+    const data = await Post.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -217,6 +218,7 @@ router.get("/login", async (req, res) => {
       });
     }
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });

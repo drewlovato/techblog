@@ -1,10 +1,10 @@
 const formHandler = async (event) => {
   event.preventDefault();
 
-  const postId = document.querySelector("#labelPostId").textContent.trim();
+  const postID = document.querySelector("#labelPostID").textContent.trim();
 
-  if (postId) {
-    const response = await fetch(`/api/posts/${postId}`, {
+  if (postID) {
+    const response = await fetch(`/api/posts/${postID}`, {
       method: "DELETE",
     });
 

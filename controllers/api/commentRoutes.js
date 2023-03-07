@@ -6,7 +6,7 @@ router.post("/", isAuthorized, async (req, res) => {
   try {
     const data = await Comment.create({
       content: req.body.content,
-      post_id: req.body.post_id,
+      post_id: req.body.postID,
       user_id: req.session.user_id,
     });
     res.status(200).json(data);
@@ -15,7 +15,7 @@ router.post("/", isAuthorized, async (req, res) => {
   }
 });
 
-router.delete("/", isAuthorized, async (req, res) => {
+router.delete("/:id", isAuthorized, async (req, res) => {
   try {
     const data = await Comment.destroy({
       where: {

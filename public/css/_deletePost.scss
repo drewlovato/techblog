@@ -1,0 +1,91 @@
+#deletePostForm {
+  background-color: white;
+  width: 85%;
+  padding: 4rem;
+  border-radius: 0.2rem;
+  box-shadow: 20px 20px 50px rgb(185, 125, 125);
+
+  .form-message {
+    font-family: $titleFont;
+    font-size: $titleFontSize;
+    color: $titleColor;
+    font-weight: $titleWeight;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .list-container {
+    display: block;
+    padding: 0;
+    margin-bottom: 2rem;
+
+    .list-item {
+      font-family: $titleFont;
+      font-size: 0.75rem;
+      color: rgb(168, 168, 168);
+      font-weight: 500;
+      margin-bottom: 1rem;
+      display: block;
+      width: 100%;
+
+      li {
+        font-family: $titleFont;
+        font-size: 1rem;
+        color: rgb(0, 182, 18);
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  .button-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .btnDelete {
+      font-family: $paragraphFont;
+      font-size: 0.85rem;
+      color: white;
+      background-color: rgb(0, 182, 18);
+      box-shadow: 10px 10px 20px rgb(209, 209, 209);
+      text-decoration: none;
+      padding: 0.75rem;
+      margin-right: 1rem;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        transition: 0.5s;
+        background-color: rgb(255, 255, 255);
+        color: rgb(255, 56, 56);
+        border-color: rgb(255, 56, 56);
+        border: solid;
+      }
+    }
+
+    .btnCancel {
+      font-family: $paragraphFont;
+      font-size: 0.85rem;
+      color: white;
+      background-color: rgb(0, 182, 18);
+      box-shadow: 10px 10px 20px rgb(209, 209, 209);
+      text-decoration: none;
+      padding: 0.75rem;
+      margin-right: 1rem;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        transition: 0.5s;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 182, 18);
+        border-color: rgb(0, 182, 18);
+        border: solid;
+      }
+    }
+  }
+}

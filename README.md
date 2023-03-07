@@ -18,13 +18,24 @@ Tech Blog Website
 
 - This application allows you to blog posts about tech. When logged into to your account with a username and password, you are able to add, remove, and edit posts. On the profile page you can see your credentials and change your password if necessary.
 
+- Technologies Used:
+  - Node.js
+  - Express.js
+  - MySQL
+  - Sequelize
+  - dotenv
+  - Express-HandleBars
+  - Express-Session
+  - Bcrypt
+
 ### Installation
 
 1. Clone the repository provided
 2. Open the integrated terminal and open correct mysql shell by running "-u root -prootroot"
 3. Once in mysql SOURCE schema.sql first, and SOURCE query.sql second
 4. Install node modules with "npm install"
-5. Run application with "npm start"
+5. run "npm run seed"
+6. Run application with "npm start"
 
 ### Usage
 

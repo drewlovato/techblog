@@ -3,7 +3,7 @@
     <div class="edit-post-container">
       <div class="edit-post-id-con">
         <div class="post-id-title">Edit Post
-          <label id="labelPostID">#{{post.id}}</label>
+          <label id="labelPostID">{{post.id}}</label>
         </div>
       </div>
       <div class="edit-post-title">
@@ -12,7 +12,7 @@
           type="text"
           id="textTitle"
           class="title-post"
-          value="{{post.title}}"
+          value={{post.title}}
         />
       </div>
       <div class="edit-post-content">
@@ -25,11 +25,9 @@
       </div>
       <div class="date-created">
         <label for="textDateCreated">Date Created:</label>
-        <input
-          type="text"
-          id="textDateCreated"
-          value="{{format_datetime post.date_created}}"
-        />
+        <label id="textDateCreated">{{format_datetime
+            post.date_created
+          }}</label>
       </div>
       <div>
         <button type="submit" class="edit-submit-btn">Submit</button>
@@ -38,7 +36,7 @@
   </form>
 
   <div class="comments-container">
-    <div class="comments-title">Comments</div>
+    {{!-- <div class="comments-title">Comments</div>
     <table class="comments-table">
       <thead>
         <tr>
@@ -47,7 +45,7 @@
           <th scope="col">Content</th>
           <th scope="col">Owner</th>
         </tr>
-      </thead>
+      </thead> --}}
       <tbody>
         {{#each post.comments as |comment|}}
           <tr>

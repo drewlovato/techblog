@@ -1,30 +1,30 @@
 <section class="dashboard-container">
-    <div class="dashboard-header">
-        <div class="post-header">POSTS</div> 
-        <span><a href="/createPost" class="btnCreatePost">+ POST</a></span>
-    </div>
-    <div class="table-body">
-        {{#each posts as |post|}}
-        <tr>
-            <div class="table-title-con">
-                <div class="table-id">#{{id}}</div>
-                <div class="table-title">{{title}}</div>
-            </div>
-            <div class="table-content-con">
-                <div class="table-content-data">{{content}}</div>
-            </div>
-            <hr>
-            <div class="table-owner-con">
-                <div class="table-title">OWNER: </div>
-                <div class="table-data">{{user.name}}</div>
-            </div>
-            <div class="table-buttons">
-                <div class="manipulate-post-section">
-                    <span><a href="/editPost/{{id}}" class="btnEdit">EDIT</a></span>
-                    <span><a href="/deletePost/{{id}}" class="btnDelete">DELETE</a></span>
-                </div>
-            </div>
-        </tr>
-        {{/each}}
-    </div>
+  <div class="dashboard-header">
+    <div class="post-header">POSTS</div>
+    <span><a href="/createPost" class="btnCreatePost">+ POST</a></span>
+  </div>
+  <div class="table-body">
+    {{#each posts as |post|}}
+      <tr>
+        <div class="table-title-con">
+          <div class="table-id">#{{id}}</div>
+          <div class="table-title">{{title}}</div>
+        </div>
+        <div class="table-content-con">
+          <div class="table-content-data">{{content}}</div>
+        </div>
+        <hr />
+        <div class="table-owner-con">
+          <div class="table-title">OWNER: </div>
+          <div class="table-data">{{user.name}}</div>
+        </div>
+        <div class="table-buttons">
+          <div class="manipulate-post-section">
+            <a href="/editPost/{{id}}" class="btnEdit">EDIT</a>
+            <a href="/deletePost/{{id}}" class="btnDelete">DELETE</a>
+          </div>
+        </div>
+      </tr>
+    {{/each}}
+  </div>
 </section>

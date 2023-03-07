@@ -1,0 +1,29 @@
+<form id="deleteCommentForm">
+  <div class="delete-comment-title">
+    Are you sure you want to delete this comment?
+  </div>
+  <ul class="list-container">
+    <li class="list-individual">ID:
+      <label id="labelCommentID">{{comment.id}}</label>
+    </li>
+    <li class="list-individual">DATE CREATED:
+      {{format_datetime comment.date_created}}
+    </li>
+    <li class="list-individual">POST:
+      {{comment.post.title}}
+      <input id="hiddenPostID" type="hidden" value="{{comment.post.id}}" />
+    </li>
+    <li class="list-individual">CONTENT:
+      {{trim_string comment.content}}
+    </li>
+    <li class="list-individual">OWNER:
+      {{comment.user.name}}
+    </li>
+  </ul>
+  <div class="button-section">
+    <button class="btnDelete" type="submit">DELETE</button>
+    <a href="/editPost/{{comment.post.id}}" class="btnCancel">CANCEL</a>
+  </div>
+</form>
+
+<script src="/js/deleteComment.js"></script>

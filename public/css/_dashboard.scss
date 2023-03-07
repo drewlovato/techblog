@@ -1,158 +1,156 @@
-
 .dashboard-container {
-    background-color: white;
-    width: 53rem;
-    padding: 5rem 5rem 2rem 5rem;
-    border-radius: .2rem;
-    box-shadow: 20px 20px 50px rgb(185, 125, 125);
-    margin-bottom: 3rem;
+  background-color: white;
+  width: 53rem;
+  padding: 5rem 5rem 2rem 5rem;
+  border-radius: 0.2rem;
+  box-shadow: 20px 20px 50px rgb(185, 125, 125);
+  margin-bottom: 3rem;
 
-    .dashboard-header {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-
-
-        .post-header{
-            font-family: $titleFont;
-            font-size: $titleFontSize;
-            color: $titleColor;
-            font-weight: $titleWeight;
-            display: flex;
-        }
-
-        .btnCreatePost {
-            font-family: $paragraphFont;
-            font-size: .85rem;
-            padding: .75rem;
-            color: rgb(0, 182, 18);;
-            text-decoration: none;
-            font-weight: 700;
-            justify-content: center;
-        }
-
-        .btnCreatePost:hover {
-            transition: .5s;
-            color: rgb(95, 172, 103);
-        }
-    }
-
-    .table-id-con {
-        font-family: $titleFont;
-        font-size: $titleFontSize;
-        color: $titleColor;
-        font-weight: 200;
-        margin-bottom: 1rem;
-    }
-
-    .table-title-con {
-        display: flex;
-        background-color: rgb(0, 182, 18);
-        box-shadow: 20px 10px 20px rgb(209, 209, 209);
-        width: inherit;
-        align-items: center;
-        margin-bottom: 1rem;
-        padding: 1rem;
-
-        .table-id,
-        .table-title {
-            font-family: $paragraphFont;
-            font-size: $paragraphFontSize;
-            color: white;
-            font-weight: $paragraphWeight;
-            margin-left: .75rem;
-        }
-    }
-
-    .table-content-con {
-        width: 100%;
-        padding: 1rem;
-        display: flex;
-        justify-content: flex-start;
-
-        .table-content-data {
-            font-family: $paragraphFont;
-            font-size: $paragraphFontSize;
-            color: rgb(0, 182, 18);
-            font-weight: 300;
-            width: 90%;
-            margin-left: 1rem;
-            margin-bottom: 2rem;
-        }
-    }
-
-    hr {
-        background-color: rgb(0, 182, 18);
-    }
-
-    .table-owner-con {
-        display: flex;
-        align-items: center;
-
-        .table-title {
-            font-family: $paragraphFont;
-            font-size: .75rem;
-            color: rgb(185, 125, 125);
-            font-weight: $paragraphWeight;
-            margin: 0 .75rem 0 .75rem;
-        }
-
-        .table-data {
-            font-family: $paragraphFont;
-            font-size: .75rem;
-            color: rgb(185, 125, 125);
-            font-weight: 300;
-        }
-    }
-}
-
-.table-buttons {
+  .dashboard-header {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 2rem 0 3rem 0;
+    margin-bottom: 1rem;
 
-    .manipulate-post-section {
-        display: flex;
-
-        .btnEdit {
-            font-family: $paragraphFont;
-            font-size: .85rem;
-            color: white;
-            background-color: rgb(0, 182, 18);
-            box-shadow: 10px 10px 20px rgb(209, 209, 209);
-            text-decoration: none;
-            padding: .75rem;
-            margin-right: 1rem;
-        }
-
-        .btnEdit:hover {
-            transition: .5s;
-            background-color: rgb(255, 255, 255);
-            color: rgb(0, 182, 18);
-            border-color: rgb(0, 182, 18);
-            border: solid;
-        }
-
-        .btnDelete {
-            font-family: $paragraphFont;
-            font-size: .85rem;
-            color: white;
-            background-color: rgb(0, 182, 18);
-            box-shadow: 10px 10px 20px rgb(209, 209, 209);
-            text-decoration: none;
-            padding: .75rem;
-            margin-right: 1rem;
-        }
-
-        .btnDelete:hover {
-            transition: .5s;
-            background-color: rgb(255, 255, 255);
-            color: rgb(255, 56, 56);
-            border-color: rgb(255, 56, 56);
-            border: solid;
-        }
+    .post-header {
+      font-family: $titleFont;
+      font-size: $titleFontSize;
+      color: $titleColor;
+      font-weight: $titleWeight;
+      display: flex;
     }
+
+    .btnCreatePost {
+      font-family: $paragraphFont;
+      font-size: 0.85rem;
+      padding: 0.75rem;
+      color: rgb(0, 182, 18);
+      text-decoration: none;
+      font-weight: 700;
+      justify-content: center;
+    }
+
+    .btnCreatePost:hover {
+      transition: 0.5s;
+      color: rgb(95, 172, 103);
+    }
+  }
+
+  .table-id-con {
+    font-family: $titleFont;
+    font-size: $titleFontSize;
+    color: $titleColor;
+    font-weight: 200;
+    margin-bottom: 1rem;
+  }
+
+  .table-title-con {
+    display: flex;
+    background-color: rgb(0, 182, 18);
+    box-shadow: 20px 10px 20px rgb(209, 209, 209);
+    width: inherit;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+
+    .table-id,
+    .table-title {
+      font-family: $paragraphFont;
+      font-size: $paragraphFontSize;
+      color: white;
+      font-weight: $paragraphWeight;
+      margin-left: 0.75rem;
+    }
+  }
+
+  .table-content-con {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+
+    .table-content-data {
+      font-family: $paragraphFont;
+      font-size: $paragraphFontSize;
+      color: rgb(0, 182, 18);
+      font-weight: 300;
+      width: 90%;
+      margin-left: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  hr {
+    background-color: rgb(0, 182, 18);
+  }
+
+  .table-owner-con {
+    display: flex;
+    align-items: center;
+
+    .table-title {
+      font-family: $paragraphFont;
+      font-size: 0.75rem;
+      color: rgb(185, 125, 125);
+      font-weight: $paragraphWeight;
+      margin: 0 0.75rem 0 0.75rem;
+    }
+
+    .table-data {
+      font-family: $paragraphFont;
+      font-size: 0.75rem;
+      color: rgb(185, 125, 125);
+      font-weight: 300;
+    }
+  }
+}
+
+.table-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0 3rem 0;
+
+  .manipulate-post-section {
+    display: flex;
+
+    .btnEdit {
+      font-family: $paragraphFont;
+      font-size: 0.85rem;
+      color: white;
+      background-color: rgb(0, 182, 18);
+      box-shadow: 10px 10px 20px rgb(209, 209, 209);
+      text-decoration: none;
+      padding: 0.75rem;
+      margin-right: 1rem;
+    }
+
+    .btnEdit:hover {
+      transition: 0.5s;
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 182, 18);
+      border-color: rgb(0, 182, 18);
+      border: solid;
+    }
+
+    .btnDelete {
+      font-family: $paragraphFont;
+      font-size: 0.85rem;
+      color: white;
+      background-color: rgb(0, 182, 18);
+      box-shadow: 10px 10px 20px rgb(209, 209, 209);
+      text-decoration: none;
+      padding: 0.75rem;
+      margin-right: 1rem;
+    }
+
+    .btnDelete:hover {
+      transition: 0.5s;
+      background-color: rgb(255, 255, 255);
+      color: rgb(255, 56, 56);
+      border-color: rgb(255, 56, 56);
+      border: solid;
+    }
+  }
 }

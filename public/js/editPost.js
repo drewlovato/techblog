@@ -1,18 +1,18 @@
 const formHandler = async (event) => {
   event.preventDefault();
 
-  const postId = document.querySelector("#labelPostID").textContent.trim();
+  const postID = document.querySelector("#labelPostID").textContent.trim();
   const title = document.querySelector("#textTitle").value.trim();
   const content = document.querySelector("#textContent").value.trim();
-  const dateCreated = document.querySelector("#textDateCreated").value.trim();
+  const dateCreated = document.querySelector("#textDateCreated");
 
-  if (postId && title && content && dateCreated) {
-    const response = await fetch(`/api/post/${postId}`, {
+  if (postID && title && content && dateCreated) {
+    const response = await fetch(`/api/posts/${postID}`, {
       method: "PUT",
       body: JSON.stringify({
         title,
-        dateCreated,
         content,
+        dateCreated,
       }),
       headers: { "Content-Type": "application/json" },
     });
